@@ -11,18 +11,18 @@ We utilize a **Micro-Services Architecture** (simulated for Hackathon via Modula
 
 ```mermaid
 graph TD
-    User[Student (Flutter App)] -->|Image/Voice| API[FastAPI Gateway]
+    User[Student - Flutter App] -->|Image or Voice| API[FastAPI Gateway]
     API -->|Async Task| Worker[Celery Worker]
-    
-    subgraph AI_Processing_Pipeline
-        Worker -->|OCR| Vision[Google Vision / Tesseract]
-        Vision -->|Text| RAG[Vector Search (NCERT DB)]
-        RAG -->|Context + Query| LLM[Gemini 1.5 Flash]
-        LLM -->|JSON Response| TTS[Bhashini / Edge TTS]
+
+    subgraph AI_Processing
+        Worker -->|OCR| Vision[Google Vision]
+        Vision -->|Text| RAG[Vector Search NCERT DB]
+        RAG -->|Context Query| LLM[Gemini 1_5 Flash]
+        LLM -->|JSON Response| TTS[Bhashini or Edge TTS]
     end
-    
-    TTS -->|Audio Stream| S3[Object Storage / Cache]
-    S3 -->|Stream URL| User
+
+    TTS -->|Audio Stream| Storage[Object Storage]
+    Storage -->|Stream URL| User
 ```
 ## 2. Tech Stack Selection
 Component,Choice,Why this for the Hackathon?## 🛠 Tech Stack Decisions
