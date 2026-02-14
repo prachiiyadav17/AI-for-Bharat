@@ -14,7 +14,7 @@ graph TD
     User[Student (Flutter App)] -->|Image/Voice| API[FastAPI Gateway]
     API -->|Async Task| Worker[Celery Worker]
     
-    subgraph "AI Processing Pipeline"
+    subgraph AI_Processing_Pipeline
         Worker -->|OCR| Vision[Google Vision / Tesseract]
         Vision -->|Text| RAG[Vector Search (NCERT DB)]
         RAG -->|Context + Query| LLM[Gemini 1.5 Flash]
@@ -24,7 +24,6 @@ graph TD
     TTS -->|Audio Stream| S3[Object Storage / Cache]
     S3 -->|Stream URL| User
 ```
-
 ## 2. Tech Stack Selection
 Component,Choice,Why this for the Hackathon?## 🛠 Tech Stack Decisions
 
