@@ -36,7 +36,8 @@ Component,Choice,Why this for the Hackathon?## 🛠 Tech Stack Decisions
 | TTS (Audio)   | Edge-TTS / Bhashini        | Edge-TTS is free and high quality. Bhashini is the Govt. of India standard (bonus points). |
 | Database      | SQLite                     | Zero config, file-based. Perfect for MVP. |
 
-##3. Detailed Component Design
+## 3. Detailed Component Design
+
 3.1 The "Context Injection" Engine
 Standard AI hallucinations are dangerous in education. We solve this using RAG:
 
@@ -67,7 +68,7 @@ Audio Format: transcode all TTS output to Opus/Ogg at 16kbps (Voice profile). Th
 
 Optimistic UI: Show the text explanation immediately while the audio buffers in the background.
 
-##4. Database Schema
+## 4. Database Schema
 
 # 🗄 Database Schema Design
 
